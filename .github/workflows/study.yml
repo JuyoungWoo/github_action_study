@@ -1,0 +1,19 @@
+name: CI
+
+on: # 다음 상황에서 jobs들이 실행됨
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      # - uses: actions/checkout@v3
+      - name: print hello
+        run: echo Hello
+      - name: Run a multi-line script
+        run: | # 여러줄 실행하려면 '|' 치기
+          echo Add other actions to build,
+          echo test, and deploy your project.
